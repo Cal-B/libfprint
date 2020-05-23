@@ -17,6 +17,12 @@ First we need to remove any fingerprint software, including `libpam-fprintd` or 
  - `sudo systemctl enable fprintd`
  - `reboot -f` will reboot your computer to enable the `fprintd` service
 
+Let's start enrolling fingerprints! Make sure to wash your hands before starting, moistening your fingertips can help with the process if you run into trouble.
+ - `fprintd-enroll -f "right-index-finger" "$replace_with_your_username"` enrolls just the right index finger
+  - `for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger" "$USER"; done` enrolls all fingers. Remove entries if you lack these hands/fingers 
+  - `fprintd-verify` tests whether these enrollments were stored and identify successdully
+
+
 Finally, we edit SDDM to properly utilize the reader
  - `sudo nano /etc/pam.d/sddm`
  - Add `auth      sufficient pam_fprintd.so max-tries=3` below the file header and save
