@@ -19,7 +19,7 @@ First we need to remove any fingerprint software, including `libpam-fprintd` or 
 
 Let's start enrolling fingerprints! Make sure to wash your hands before starting, moistening your fingertips can help with the process if you run into trouble.
  - `fprintd-enroll -f "right-index-finger" "$replace_with_your_username"` enrolls just the right index finger
-  - `for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger" "$USER"; done` enrolls all fingers. Remove entries if you lack these hands/fingers 
+  - `for finger in {left,right}-{thumb,{index,middle,ring,little}-finger}; do fprintd-enroll -f "$finger" "$replace_with_your_username""; done` enrolls all fingers. Remove entries if you lack these hands/fingers 
   - `fprintd-verify` tests whether these enrollments were stored and identify successdully
 
 
