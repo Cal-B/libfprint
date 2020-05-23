@@ -9,7 +9,7 @@ Check the original branch for the general install process
 
 First we need to remove any fingerprint software, including `libpam-fprintd` or any other `fprintd` instance.
  - `sudo apt-get remove libpam-fprintd`
- - `sudo apt list | grep 'finger\|print'`  should return no `libpam-fprintd` or `fprintd` packages
+ - `sudo apt list | grep 'finger\|fprintd'`  should return no `libpam-fprintd` or `fprintd` packages
 
  Now we start to install the package
  - `sudo add-apt-repository -u ppa:3v1n0/libfprint-vfs0090`
