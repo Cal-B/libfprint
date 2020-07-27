@@ -5,7 +5,7 @@
 [This tutorial was invaluable in getting this guide trimmed down](https://glsk.net/2018/05/t460s-fingerprint-reader-in-linux/)
 
 #### Ubuntu/Kubuntu installation
-Check the original branch for the general install process
+Check the original branch for the general install process, INCLUDING ACTIVATING THE FINGERPRINT SENSOR. This guide is more for re-installing after an update.
 
 First we need to remove any fingerprint software, including `libpam-fprintd` or any other `fprintd` instance.
  - `sudo apt-get remove libpam-fprintd`
